@@ -20,5 +20,6 @@ public class PayerState : MonoBehaviour,IDamageble
     void Dead()
     {
         if (deadEffect) Destroy(Instantiate(deadEffect, transform.position, Quaternion.identity), 3f);
+        gameObject.SetActive(false);
     }
 }

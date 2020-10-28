@@ -11,6 +11,14 @@ public class Enemy : MonoBehaviour,IDamageble
 
     public void TakeDamage(float damage)
     {
-       //Script
+        if (health <= 0f) return;
+        health -= damage;
+        if (health <= 0f) Dead();
+    }
+
+    protected void Dead()
+    {
+        if (deadEffect) Destroy(Instantiate(deadEffect, transform.position, Quaternion.identity), 3f);
+        Destroy(gameObject);
     }
 }
