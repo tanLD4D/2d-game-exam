@@ -44,6 +44,11 @@ public class IsometricCharacterRenderer : MonoBehaviour
         animator.Play(directionArray[lastDirection]);
     }
 
+    public float GetFaceAnlge()
+    {
+        return (45f * lastDirection);
+    }
+
     //helper functions
 
     //this function converts a Vector2 direction to an index to a slice around a circle
