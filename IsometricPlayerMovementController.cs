@@ -6,7 +6,7 @@ public class IsometricPlayerMovementController : MonoBehaviour
 {
 
     public float movementSpeed = 1f;
-    public Joystick joystick;
+    public Joystick joystickInput;
     IsometricCharacterRenderer isoRenderer;
 
     Rigidbody2D rbody;
@@ -22,8 +22,8 @@ public class IsometricPlayerMovementController : MonoBehaviour
     void FixedUpdate()
     {
         Vector2 currentPos = rbody.position;
-        float horizontalInput = joystick.Horizontal;
-        float verticalInput = joystick.Vertical;
+        float horizontalInput = joystickInput.Horizontal;
+        float verticalInput = joystickInput.Vertical;
         Vector2 inputVector = new Vector2(horizontalInput, verticalInput);
         inputVector = Vector2.ClampMagnitude(inputVector, 1);
         Vector2 movement = inputVector * movementSpeed;
