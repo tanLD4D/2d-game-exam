@@ -38,10 +38,10 @@ public class RagedEnemy : Enemy
             attackSpeedTimer -= Time.deltaTime;
             if (attackSpeedTimer < 0f) attackSpeedTimer = 0f;
         }
-        Debug.Log(CanAttack());
+        
         if (playerTarget && CanAttack() && Vector2.Distance(playerTarget.position,transform.position) <= attackDistance)
         {
-            Debug.Log("Attack");
+            
             if (attackSpeedTimer <= 0f)
             {
                 
